@@ -18,6 +18,8 @@ namespace ERP
                 parameters = sr.ReadToEndAsync().Result;
             }
             PostData = JObject.Parse(parameters);
+            Console.WriteLine(parameters);
+            Console.WriteLine(PostData);
             // 获取APICommand
             string APICommand = GetParameterByName("APICommand");
             switch (APICommand)
@@ -39,6 +41,21 @@ namespace ERP
                         returnStr = BC_APIResult.GetAPIResult(loginResult,(int)BC_APIResultStatus.SUCCESS,"Login API");
                         break;
                     }
+                    // 注册
+                case "register":
+                    {
+                        // 1. 从参数中获取注册信息
+                        string username = GetParameterByName("UserNamae");
+                        string password = GetParameterByName("Password");
+                        string nickName = GetParameterByName("NickName");
+                        string email = GetParameterByName("Email");
+                        string phone = GetParameterByName("Phone");
+                        Console.WriteLine($"username:{username}");
+                        // 2. 调⽤ BC_Users.Register ⽅法，并返回
+                        returnStr = BC_APIResult.GetAPIResult(BC_Users.Register(username,password, nickName, email, phone), (int)BC_APIResultStatus.SUCCESS, "Register API");
+                        
+                        break;
+                    }
 
 
                 default:
@@ -52,6 +69,10 @@ namespace ERP
         // 根据名称获取string类型参数
         private static string GetParameterByName(string ParameterName)
         {
+            if (PostData == null || !PostData.ContainsKey(ParameterName))
+            {
+                return string.Empty; // 或者返回其他默认值
+            }
             return PostData[ParameterName].ToString();
         }
     }

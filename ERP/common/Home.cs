@@ -18,8 +18,13 @@ namespace ERP
                         returnStr = LoadHTML("system/login"); 
                         break;
                     }
+                case "1":
+                    {
+                        returnStr = LoadHTML("system/register");
+                        break;
+                    }
                     // task
-                    case "2":
+                case "2":
                     {
                         returnStr = LoadHTML("task/taskList"); 
                         break;

@@ -103,3 +103,4 @@ E:/TaskSystem/obj/Debug/net8.0/TaskSystem.csproj.Up2Date
 /Users/frank/Code/mycode/TaskSystem/obj/Debug/net8.0/TaskSystem.pdb
 /Users/frank/Code/mycode/TaskSystem/obj/Debug/net8.0/TaskSystem.genruntimeconfig.cache
 /Users/frank/Code/mycode/TaskSystem/obj/Debug/net8.0/ref/TaskSystem.dll
+/Users/frank/Code/mycode/TaskSystem/obj/Debug/net8.0/TaskSystem.sourcelink.json

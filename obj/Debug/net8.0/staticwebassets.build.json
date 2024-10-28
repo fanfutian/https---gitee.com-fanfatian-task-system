@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wTdpb4JhZqWTyhul4LN5alQ7PyU24N6a+a/gOCBx01U=",
+  "Hash": "U9nlxZ1aqv/sK3C9Hetda6v9BOq67xOLbURjgBKQhmg=",
   "Source": "TaskSystem",
   "BasePath": "_content/TaskSystem",
   "Mode": "Default",
@@ -74,6 +74,25 @@
       "OriginalItemSpec": "wwwroot/html/system/login.html"
     },
     {
+      "Identity": "/Users/frank/Code/mycode/TaskSystem/wwwroot/html/system/register.html",
+      "SourceId": "TaskSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/frank/Code/mycode/TaskSystem/wwwroot/",
+      "BasePath": "_content/TaskSystem",
+      "RelativePath": "html/system/register.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/html/system/register.html"
+    },
+    {
       "Identity": "/Users/frank/Code/mycode/TaskSystem/wwwroot/html/task/taskList.html",
       "SourceId": "TaskSystem",
       "SourceType": "Discovered",
@@ -129,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/login.js"
+    },
+    {
+      "Identity": "/Users/frank/Code/mycode/TaskSystem/wwwroot/js/register.js",
+      "SourceId": "TaskSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/frank/Code/mycode/TaskSystem/wwwroot/",
+      "BasePath": "_content/TaskSystem",
+      "RelativePath": "js/register.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/register.js"
     },
     {
       "Identity": "/Users/frank/Code/mycode/TaskSystem/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",

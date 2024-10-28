@@ -40,4 +40,67 @@ public class BC_Users
             Message = message
         };
     }
+
+
+    public static object Register(string username, string password, string nickName, string email, string phone){
+        
+        bool isRegister = false;
+        string message = "注册失败！";
+        
+        StringBuilder sqlB = new StringBuilder();
+        sqlB.AppendLine("SELECT ");
+        sqlB.AppendLine("COUNT(UserID) AS Count ");
+        sqlB.AppendLine("FROM users ");
+        sqlB.AppendLine($"WHERE UserName = '{username}'");
+        sqlB.AppendLine(";");
+        int count = Convert.ToInt32(BC_MySqlUtils.ExecuteSQLGetScalar(sqlB.ToString()));
+        
+        Console.WriteLine($"count:{count}");
+        if (count > 0){
+            message += $"用户名{username}已被使用！";
+        }else{
+            sqlB.Length = 0;
+            sqlB.AppendLine("INSERT INTO `db_task`.`users` ");
+            sqlB.AppendLine("( ");
+            sqlB.AppendLine(" `UserName` ");
+            sqlB.AppendLine(" , `NickName` ");
+            sqlB.AppendLine(" , `RoleID` ");
+            sqlB.AppendLine(" , `Email` ");
+            sqlB.AppendLine(" , `Phone` ");
+            sqlB.AppendLine(" , `EncryptedPassword` ");
+            sqlB.AppendLine(" , `Status` ");
+            sqlB.AppendLine(" , `UpdatedBy` ");
+            sqlB.AppendLine(" , `TimeUpdate` ");
+            sqlB.AppendLine(" , `CreatedBy` ");
+            sqlB.AppendLine(" , `TimeCreated` ");
+            sqlB.AppendLine(") ");
+            sqlB.AppendLine("VALUES ");
+            sqlB.AppendLine("( ");
+            sqlB.AppendLine($" '{username}'");
+            sqlB.AppendLine($", '{nickName}'");
+            sqlB.AppendLine(" , 1 ");
+            sqlB.AppendLine($" , '{email}'");
+            sqlB.AppendLine($" , '{phone}'");
+            sqlB.AppendLine($" , '{password}'");
+            sqlB.AppendLine(" , 1 ");
+            sqlB.AppendLine(" , 1 ");
+            sqlB.AppendLine(" , NOW() ");
+            sqlB.AppendLine(" , 1 ");
+            sqlB.AppendLine(" , NOW() ");
+            sqlB.AppendLine(" ); ");
+            int result = BC_MySqlUtils.ExecuteSQL(sqlB.ToString());
+
+            if (result > 0){
+                isRegister = true;
+                message = "注册成功!";
+            }
+            else{
+                message += "请联系管理员！";
+            }
+        }
+        return new{
+            RegisterStatus = isRegister,
+            Message = message
+        };
+    }
 }

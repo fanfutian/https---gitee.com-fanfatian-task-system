@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets/html/system/login.html"
     },
     {
+      "Id": "/Users/frank/Code/mycode/TaskSystem/wwwroot/html/system/register.html",
+      "PackagePath": "staticwebassets/html/system/register.html"
+    },
+    {
       "Id": "/Users/frank/Code/mycode/TaskSystem/wwwroot/html/task/taskList.html",
       "PackagePath": "staticwebassets/html/task/taskList.html"
     },
@@ -23,6 +27,10 @@
     {
       "Id": "/Users/frank/Code/mycode/TaskSystem/wwwroot/js/login.js",
       "PackagePath": "staticwebassets/js/login.js"
+    },
+    {
+      "Id": "/Users/frank/Code/mycode/TaskSystem/wwwroot/js/register.js",
+      "PackagePath": "staticwebassets/js/register.js"
     },
     {
       "Id": "/Users/frank/Code/mycode/TaskSystem/wwwroot/lib/bootstrap/LICENSE",

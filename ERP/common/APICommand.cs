@@ -45,7 +45,7 @@ namespace ERP
                 case "register":
                     {
                         // 1. 从参数中获取注册信息
-                        string username = GetParameterByName("UserNamae");
+                        string username = GetParameterByName("UserName");
                         string password = GetParameterByName("Password");
                         string nickName = GetParameterByName("NickName");
                         string email = GetParameterByName("Email");

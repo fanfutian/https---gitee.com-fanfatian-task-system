@@ -16,5 +16,27 @@
 ![输入图片说明](https://foruda.gitee.com/images/1730129641394025799/93ae0b9f_14048343.png "屏幕截图")
 更改的，名称需要和：wwwroot/js/register.js文件中的下图名称相同
 ![输入图片说明](imageimage.png)
+4. 创建Task表结构，并添加俩条数据
+```
+CREATE TABLE `tasks` (
+    `TaskID` int NOT NULL AUTO_INCREMENT,
+    `Task` varchar(64) NOT NULL,
+    `AssignedToUserID` int NOT NULL,
+    `TaskTypeID` int NOT NULL,
+    `TaskStatusID` int NOT NULL,
+    `ProjectID` int NOT NULL,
+    `UpdatedBy` varchar(45) DEFAULT NULL,
+    `TimeUpdate` datetime NOT NULL,
+    `CreatedBy` varchar(45) DEFAULT NULL,
+    `TimeCreated` datetime NOT NULL,
+    PRIMARY KEY (`TaskID`)
+) ENGINE = InnoDB AUTO_INCREMENT = 3 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci
+
+
+INSERT INTO `tasks`(`TaskID`,`Task`,`AssignedToUserID`,`TaskTypeID`,`TaskStatusID`,`ProjectID`,`UpdatedBy`,`TimeUpdate`,`CreatedBy`,`TimeCreated`) VALUES(1,'登录功能',3,1,1,1,'1','2024-01-01 00:00:00','1','2024-01-01 00:00:00');
+INSERT INTO `tasks`(`TaskID`,`Task`,`AssignedToUserID`,`TaskTypeID`,`TaskStatusID`,`ProjectID`,`UpdatedBy`,`TimeUpdate`,`TimeCreated`,`CreatedBy`) VALUES(2,'注册功能',1,1,1,1,'1','2024-01-02 00:02:23','2024-01-02 00:02:23','1');
+
+```
+
 
 

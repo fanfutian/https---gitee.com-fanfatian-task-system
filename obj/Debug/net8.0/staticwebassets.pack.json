@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets/js/register.js"
     },
     {
+      "Id": "/Users/frank/Code/mycode/TaskSystem/wwwroot/js/taskList.js",
+      "PackagePath": "staticwebassets/js/taskList.js"
+    },
+    {
       "Id": "/Users/frank/Code/mycode/TaskSystem/wwwroot/lib/bootstrap/LICENSE",
       "PackagePath": "staticwebassets/lib/bootstrap"
     },

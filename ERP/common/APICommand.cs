@@ -56,7 +56,15 @@ namespace ERP
                         
                         break;
                     }
-
+                    // task列表
+                case "taskList":
+                    {
+                        string taskID = GetParameterByName("TaskID");
+                        string task = GetParameterByName("TaskTitle");
+                        string assignedToUser = GetParameterByName("AssignedToUser");
+                        returnStr = BC_APIResult.GetAPIResult(BC_Tasks.TaskList(taskID, task, assignedToUser), (int)BC_APIResultStatus.SUCCESS, "TaskList API");
+                        break;
+                    }
 
                 default:
                     {

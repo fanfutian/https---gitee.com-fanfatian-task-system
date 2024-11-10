@@ -36,6 +36,18 @@ document.querySelector("#registerBtn").addEventListener("click", function () {
         return;
     }
 
+
+//      // 验证用户名不包含空格
+//      if (/\s/.test(username)) {
+//         alert("用户名中不能包含空格！");
+//         return false;
+//     }
+//    // 验证密码只包含数字、字母和其他特殊字符，不能包含不可见的控制字符和空格
+//     if (!/^[a-zA-Z0-9!@#$%^&*(),.?":{}|<>]+$/.test(password) || /\s/.test(password)) {
+//         alert('密码只能包含数字、字母和其他特殊字符，不能包含空格和不可见的控制字符！');
+//         return false;
+//     }
+
     const url = "/API";
     const parameters = {
         APICommand: "register",

@@ -4,9 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task 列表页面</title>
+    <style>
+        th, td {
+            border: 1px solid black;
+        }
+        table {
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
-    <h1>欢迎进入Task页面</h1>
+    <h1>Task列表界面</h1>
+    <div id="queryContiner">
+        Task ID: <input type="text" name="taskID" />
+        Task: <input type="text" name="task" />
+        指派⼈: <input type="text" name="assignedToUser" />
+        <button id="queryBtn">查&nbsp;询</button>
+    </div>
     
+    <div id="taskTableContainer">
+        <table>
+            <!-- 表头 -->
+            <thead>
+                <!-- 表头单元格 -->
+                <tr>
+                    <th>Task ID</th>
+                    <th>Task</th>
+                    <th>指派人 ID</th>
+                    <th>指派人</th>
+                    <th>Task 类型</th>
+                    <th>Task 状态</th>
+                    <th>项目 ID</th>
+                    <th>修改人</th>
+                    <th>修改时间</th>
+                    <th>创建人</th>
+                    <th>创建时间</th>
+                </tr>
+            </thead>
+
+            <!-- 表格主体 -->
+            <tbody id="taskListBody">
+                
+            </tbody>
+        </table>
+    </div>
+
+    <script src="../../js/common.js"></script>
+    <script src="../../js/taskList.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "U9nlxZ1aqv/sK3C9Hetda6v9BOq67xOLbURjgBKQhmg=",
+  "Hash": "FAy9ypSFnGovoYUqlWQKqOOVLsgcwG6+Oz9fAFh3row=",
   "Source": "TaskSystem",
   "BasePath": "_content/TaskSystem",
   "Mode": "Default",
@@ -167,6 +167,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/register.js"
+    },
+    {
+      "Identity": "/Users/frank/Code/mycode/TaskSystem/wwwroot/js/taskList.js",
+      "SourceId": "TaskSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/frank/Code/mycode/TaskSystem/wwwroot/",
+      "BasePath": "_content/TaskSystem",
+      "RelativePath": "js/taskList.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/taskList.js"
     },
     {
       "Identity": "/Users/frank/Code/mycode/TaskSystem/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",

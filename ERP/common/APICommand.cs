@@ -1,5 +1,6 @@
 using System.Text;
 using Newtonsoft.Json.Linq;
+using static ERP.BC_Tasks;
 
 namespace ERP
 {
@@ -63,6 +64,25 @@ namespace ERP
                         string task = GetParameterByName("TaskTitle");
                         string assignedToUser = GetParameterByName("AssignedToUser");
                         returnStr = BC_APIResult.GetAPIResult(BC_Tasks.TaskList(taskID, task, assignedToUser), (int)BC_APIResultStatus.SUCCESS, "TaskList API");
+                        break;
+                    }
+                case "addTask":
+                    {
+                        TaskEntity taskEntity = new();
+                        taskEntity.Task = GetParameterByName("Task");
+                        taskEntity.AssignedToUserID = Convert.ToInt32(GetParameterByName("AssignedToUserID"));
+                        taskEntity.TaskTypeID = Convert.ToInt32(GetParameterByName("TaskTypeID"));
+                       
+                        taskEntity.TaskStatusID = Convert.ToInt32(GetParameterByName("TaskStatusID"));
+                       
+                        taskEntity.ProjectID = Convert.ToInt32(GetParameterByName("ProjectID"));
+                       
+                        returnStr = BC_APIResult.GetAPIResult(BC_Tasks.AddTask(taskEntity), (int)BC_APIResultStatus.SUCCESS, "AddTask API");
+                        break;
+                    }
+                case "GetAddTaskSelectListData":
+                    {
+                        returnStr = BC_APIResult.GetAPIResult(BC_Tasks.GetAddTaskSelectListData(), (int)BC_APIResultStatus.SUCCESS, "GetAddTaskSelectListData API");
                         break;
                     }
 

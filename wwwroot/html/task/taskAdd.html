@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增 Task</title>
+    <style>
+        #addTaskContainer div {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="addTaskContainer">
+        <div>
+            <h1>新增 Task ⻚⾯</h1>
+        </div>
+        <!-- `Task`, `AssignedToUserID`, `TaskTypeID`, `TaskStatusID`, `Proj
+    ectID` -->
+        <div>
+            Task：<input type="text" name="Task">
+        </div>
+        <div>指派⼈：
+            <select id="assignedToUserIDSelect">
+                <option value="1">Admin</option>
+                <option value="2">Test</option>
+            </select>
+        </div>
+        <div>Task 类型：
+            <select id="taskTypeIDSelect">
+                <option value="1">Admin</option>
+                <option value="2">Test</option>
+            </select>
+        </div>
+        <div>Task 状态：
+            <select id="taskStatusIDSelect">
+                <option value="1">Admin</option>
+                <option value="2">Test</option>
+            </select>
+        </div>
+        <div>
+            项⽬ ID：<input type="text" name="projectID">
+        </div>
+        <div><button id="addTaskBtn">新增</button></div>
+    </div>
+
+    <script src="../../js/common.js"></script>
+    <script src="../../js/taskAdd.js"></script>
+</body>
+
+</html>

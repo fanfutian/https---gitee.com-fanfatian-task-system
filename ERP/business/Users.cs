@@ -1,10 +1,44 @@
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using MySql.Data.MySqlClient;
 
 namespace ERP;
 
 public class BC_Users
 {
+
+    public static List<BC_UserEntity> GetUserList()
+    {
+        List<BC_UserEntity> userEntityList = new();
+        StringBuilder sqlB = new();
+        sqlB.AppendLine("SELECT");
+        sqlB.AppendLine(" users.UserID");
+        sqlB.AppendLine(" , users.UserName");
+        sqlB.AppendLine(" , users.NickName");
+        sqlB.AppendLine("FROM users");
+        sqlB.AppendLine(";");
+        MySqlConnection conn = BC_MySqlUtils.GetMysqlConnection();
+        MySqlDataReader reader = BC_MySqlUtils.ExecuteSQLGetRS(sqlB.ToString(), conn);
+        BC_UserEntity userEntity = new();
+        while (reader.Read())
+        {
+            userEntity.UserID = Convert.ToInt32(reader["UserID"]);
+            userEntity.UserName = reader["UserName"].ToString();
+            userEntity.NickName = reader["NickName"].ToString();
+            userEntityList.Add(userEntity);
+        }
+        BC_MySqlUtils.CloseResource(conn, reader);
+        return userEntityList;
+    }
+
+    public struct BC_UserEntity
+    {
+        // `UserID`, `UserName`, `NickName`
+        public int UserID;
+        public string UserName;
+        public string NickName;
+    }
+
     public static  object Login(string userName ,string password)
     {
         bool isLogin = false;

@@ -3,6 +3,7 @@ loadPage();
 
 function loadPage() {
     getTaskList("", "", "");
+    addClickEventForAddTaskBen();
 }
 
 function getTaskList(taskID, taskTile, assignedToUser) {
@@ -27,8 +28,8 @@ function getTaskList(taskID, taskTile, assignedToUser) {
                     + ` <td>${taskList[i].Task}</td>`
                     + ` <td>${taskList[i].AssignedToUserID}</td>`
                     + ` <td>${taskList[i].AssignedToUser}</td>`
-                    + ` <td>${taskList[i].TaskTypeID}</td>`
-                    + ` <td>${taskList[i].TaskStatusID}</td>`
+                    + ` <td>${taskList[i].TaskType}</td>`
+                    + ` <td>${taskList[i].TaskStatus}</td>`
                     + ` <td>${taskList[i].ProjectID}</td>`
                     + ` <td>${taskList[i].UpdatedBy}</td>`
                     + ` <td>${taskList[i].TimeUpdate}</td>`
@@ -44,6 +45,13 @@ function getTaskList(taskID, taskTile, assignedToUser) {
         // 将 tbodyHtml 代码加载回⻚⾯
         document.querySelector("#taskListBody").innerHTML = tbodyHtml;
     })
+}
+
+
+function addClickEventForAddTaskBen() {
+    document.querySelector("#addTaskBtn").addEventListener("click", ()=> {
+        location.href = "/Home?DashboardID=3";
+    });
 }
 
 

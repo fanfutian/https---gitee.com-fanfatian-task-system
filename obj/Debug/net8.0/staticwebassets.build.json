@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FAy9ypSFnGovoYUqlWQKqOOVLsgcwG6+Oz9fAFh3row=",
+  "Hash": "GH1kEYA87zUtkUMFyskrTbrOT7Y0NUExO/LOh2h4NSw=",
   "Source": "TaskSystem",
   "BasePath": "_content/TaskSystem",
   "Mode": "Default",
@@ -93,6 +93,25 @@
       "OriginalItemSpec": "wwwroot/html/system/register.html"
     },
     {
+      "Identity": "/Users/frank/Code/mycode/TaskSystem/wwwroot/html/task/taskAdd.html",
+      "SourceId": "TaskSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/frank/Code/mycode/TaskSystem/wwwroot/",
+      "BasePath": "_content/TaskSystem",
+      "RelativePath": "html/task/taskAdd.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/html/task/taskAdd.html"
+    },
+    {
       "Identity": "/Users/frank/Code/mycode/TaskSystem/wwwroot/html/task/taskList.html",
       "SourceId": "TaskSystem",
       "SourceType": "Discovered",
@@ -167,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/register.js"
+    },
+    {
+      "Identity": "/Users/frank/Code/mycode/TaskSystem/wwwroot/js/taskAdd.js",
+      "SourceId": "TaskSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/frank/Code/mycode/TaskSystem/wwwroot/",
+      "BasePath": "_content/TaskSystem",
+      "RelativePath": "js/taskAdd.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/taskAdd.js"
     },
     {
       "Identity": "/Users/frank/Code/mycode/TaskSystem/wwwroot/js/taskList.js",

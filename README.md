@@ -12,13 +12,10 @@
 ![输入图片说明](https://foruda.gitee.com/images/1730129037370864877/87cac087_14048343.png "屏幕截图")
 2. 更改文件：ERP/business/Users.cs下的注册数据的数据库名
 ![输入图片说明](https://foruda.gitee.com/images/1730129343270541462/1f3d8a98_14048343.png "屏幕截图")
-3. 注册成功后，如果如果没有存入用户名（存入的用户名为空）或注册其他用户一直显示用户名被使用，更改如下：ERP/common/APICommand.cs文件，注意这里需要将数据库中的UserName字段为空的数值从数据库中删掉
-![输入图片说明](https://foruda.gitee.com/images/1730129641394025799/93ae0b9f_14048343.png "屏幕截图")
-更改的，名称需要和：wwwroot/js/register.js文件中的下图名称相同
-![输入图片说明](imageimage.png)
-4. 创建Task表结构，并添加俩条数据
+3. 创建需要的表结构，并添加数据，修改数据库名为自己的数据库名称,我这里是`db_task`
 ```
-CREATE TABLE `tasks` (
+--  创建tasks表结构
+CREATE TABLE IF NOT EXISTS `db_task`.`tasks` (
     `TaskID` int NOT NULL AUTO_INCREMENT,
     `Task` varchar(64) NOT NULL,
     `AssignedToUserID` int NOT NULL,
@@ -33,8 +30,69 @@ CREATE TABLE `tasks` (
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci
 
 
-INSERT INTO `tasks`(`TaskID`,`Task`,`AssignedToUserID`,`TaskTypeID`,`TaskStatusID`,`ProjectID`,`UpdatedBy`,`TimeUpdate`,`CreatedBy`,`TimeCreated`) VALUES(1,'登录功能',3,1,1,1,'1','2024-01-01 00:00:00','1','2024-01-01 00:00:00');
-INSERT INTO `tasks`(`TaskID`,`Task`,`AssignedToUserID`,`TaskTypeID`,`TaskStatusID`,`ProjectID`,`UpdatedBy`,`TimeUpdate`,`TimeCreated`,`CreatedBy`) VALUES(2,'注册功能',1,1,1,1,'1','2024-01-02 00:02:23','2024-01-02 00:02:23','1');
+INSERT INTO `db_task`.`tasks`(`TaskID`,`Task`,`AssignedToUserID`,`TaskTypeID`,`TaskStatusID`,`ProjectID`,`UpdatedBy`,`TimeUpdate`,`CreatedBy`,`TimeCreated`) VALUES(1,'登录功能',3,1,1,1,'1','2024-01-01 00:00:00','1','2024-01-01 00:00:00');
+INSERT INTO `db_task`.`tasks`(`TaskID`,`Task`,`AssignedToUserID`,`TaskTypeID`,`TaskStatusID`,`ProjectID`,`UpdatedBy`,`TimeUpdate`,`TimeCreated`,`CreatedBy`) VALUES(2,'注册功能',1,1,1,1,'1','2024-01-02 00:02:23','2024-01-02 00:02:23','1');
+
+
+
+
+-- 创建Task_types表结构
+CREATE TABLE IF NOT EXISTS `db_task`.`task_types` (
+    `TaskTypeID` INT NOT NULL AUTO_INCREMENT,
+    `TaskType` VARCHAR(32) NOT NULL,
+    `UpdatedBy` VARCHAR(45) NULL,
+    `TimeUpdate` DATETIME NOT NULL,
+    `CreatedBy` VARCHAR(45) NULL,
+    `TimeCreated` DATETIME NOT NULL,
+    PRIMARY KEY (`TaskTypeID`)
+);
+
+INSERT INTO `db_task`.`task_types` (`TaskType`,`UpdatedBy`,`TimeUpdate`,`CreatedBy`,`TimeCreated`)
+            VALUES ('需求确认','1','2024-01-01','1','2024-01-01');
+
+INSERT INTO `db_task`.`task_types` (`TaskType`,`UpdatedBy`,`TimeUpdate`,`CreatedBy`,`TimeCreated`)
+            VALUES ('功能','1','2024-01-01','1','2024-01-01');
+
+INSERT INTO `db_task`.`task_types` (`TaskType`,`UpdatedBy`,`TimeUpdate`,`CreatedBy`,`TimeCreated`)
+            VALUES ('缺陷','1','2024-01-01','1','2024-01-01');
+
+INSERT INTO `db_task`.`task_types` (`TaskType`,`UpdatedBy`,`TimeUpdate`,`CreatedBy`,`TimeCreated`)
+            VALUES ('⽂档','1','2024-01-01','1','2024-01-01');
+
+INSERT INTO `db_task`.`task_types` (`TaskType`,`UpdatedBy`,`TimeUpdate`,`CreatedBy`,`TimeCreated`)
+            VALUES ('测试','1','2024-01-01','1','2024-01-01');
+
+
+
+
+-- 创建task_status表结构
+CREATE TABLE `db_task`.`task_status` (
+    `TaskStatusID` INT NOT NULL AUTO_INCREMENT,
+    `TaskStatus` VARCHAR(32) NOT NULL,
+    `UpdatedBy` VARCHAR(45) NULL,
+    `TimeUpdate` DATETIME NOT NULL,
+    `CreatedBy` VARCHAR(45) NULL,
+    `TimeCreated` DATETIME NOT NULL,
+    PRIMARY KEY (`TaskStatusID`)
+);
+
+INSERT INTO`db_task`.`task_status` (`TaskStatus`,`UpdatedBy`,`TimeUpdate`,`CreatedBy`,`TimeCreated`)
+            VALUES ('指派','1','2024-01-01','1','2024-01-01');
+
+INSERT INTO `db_task`.`task_status` (`TaskStatus`,`UpdatedBy`,`TimeUpdate`,`CreatedBy`,`TimeCreated`)
+            VALUES ('开发中','1','2024-01-01','1','2024-01-01');
+
+INSERT INTO `db_task`.`task_status` (`TaskStatus`,`UpdatedBy`,`TimeUpdate`,`CreatedBy`,`TimeCreated`)
+            VALUES ('测试中','1','2024-01-01','1','2024-01-01');
+
+INSERT INTO `db_task`.`task_status` (`TaskStatus`,`UpdatedBy`,`TimeUpdate`,`CreatedBy`,`TimeCreated`)
+            VALUES ('等待升级','1','2024-01-01','1','2024-01-01');
+
+INSERT INTO `db_task`.`task_status` (`TaskStatus`,`UpdatedBy`,`TimeUpdate`,`CreatedBy`,`TimeCreated`)
+            VALUES ('功能确认','1','2024-01-01','1','2024-01-01');
+
+INSERT INTO `db_task`.`task_status` (`TaskStatus`,`UpdatedBy`,`TimeUpdate`,`CreatedBy`,`TimeCreated`)
+            VALUES ('已完成','1','2024-01-01','1','2024-01-01');
 
 ```
 

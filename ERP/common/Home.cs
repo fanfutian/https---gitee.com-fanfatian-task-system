@@ -29,6 +29,11 @@ namespace ERP
                         returnStr = LoadHTML("task/taskList"); 
                         break;
                     }
+                case "3":
+                    {
+                        returnStr = LoadHTML("task/taskAdd");
+                        break;
+                    }
                 default:
                     {
                         returnStr = LoadHTML("system/login");

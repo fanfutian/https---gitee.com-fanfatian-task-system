@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets/html/system/register.html"
     },
     {
+      "Id": "/Users/frank/Code/mycode/TaskSystem/wwwroot/html/task/taskAdd.html",
+      "PackagePath": "staticwebassets/html/task/taskAdd.html"
+    },
+    {
       "Id": "/Users/frank/Code/mycode/TaskSystem/wwwroot/html/task/taskList.html",
       "PackagePath": "staticwebassets/html/task/taskList.html"
     },
@@ -31,6 +35,10 @@
     {
       "Id": "/Users/frank/Code/mycode/TaskSystem/wwwroot/js/register.js",
       "PackagePath": "staticwebassets/js/register.js"
+    },
+    {
+      "Id": "/Users/frank/Code/mycode/TaskSystem/wwwroot/js/taskAdd.js",
+      "PackagePath": "staticwebassets/js/taskAdd.js"
     },
     {
       "Id": "/Users/frank/Code/mycode/TaskSystem/wwwroot/js/taskList.js",
